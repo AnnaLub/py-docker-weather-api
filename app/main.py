@@ -20,10 +20,10 @@ def get_weather() -> None:
         raise Exception(response.text)
 
     print(f"{data['location']['name']}/{data['location']['country']}",
-              f"\nlocaltime: {data['location']['localtime']}",
-              f"\nWeather: {data['current']['temp_c']} C, "
-              f"\nHumidity: {data['current']['humidity']}"
-              f"\nCondition: {data['current']['condition']['text']}")
+          f"\nlocaltime: {data['location']['localtime']}",
+          f"\nWeather: {data['current']['temp_c']} C, "
+          f"\nHumidity: {data['current']['humidity']}"
+          f"\nCondition: {data['current']['condition']['text']}")
 
 
 if __name__ == "__main__":
