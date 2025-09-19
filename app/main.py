@@ -3,15 +3,15 @@ from dotenv import load_dotenv
 import os
 
 CITY = "Paris"
+URL = "http://api.weatherapi.com/v1/current.json"
 
 
 def get_weather() -> None:
     load_dotenv()
     api_key = os.getenv("API_KEY")
-    url = "http://api.weatherapi.com/v1/current.json"
     params = {"key": api_key, "q": CITY}
 
-    response = requests.get(url, params=params)
+    response = requests.get(URL, params=params)
     data = response.json()
     if response.status_code == 200:
         print(f"{data['location']['name']}/{data['location']['country']}",
